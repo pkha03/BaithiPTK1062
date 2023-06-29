@@ -1,0 +1,47 @@
+@model IEnumerable<BaithiPTK1062.Models.PTKCau3>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Trang Chủ</h1>
+
+<p>
+    <a asp-action="Create">Tạo Mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.hovaten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.diachi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sodienthoai)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.hovaten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diachi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sodienthoai)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.hovaten">Sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.hovaten">Chi Tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.hovaten">Xoá</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
